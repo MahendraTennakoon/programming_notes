@@ -11,3 +11,8 @@
 * The whole state of an app that uses redux is stored in an **object tree (a tree structure holding objects at the nodes)** inside a **single store**.
 * The only way to change the state tree is to emit an **action (a plain JS object that describes what happened in the app)**.
 * **Reducers** are used to describe how the actions modify the state tree.
+
+## Motivation
+
+* JavaScript apps need to manage more state than ever before.
+* It has become increasing difficult to trace when state is modified, how it is modified and who modified it.
