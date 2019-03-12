@@ -6,3 +6,8 @@
 * It provides a great developer experience.
   * live code editing
   * time travel debugging etc.
+    * With Redux it is possible to trace every mutation to the action that caused it.
+    * It is also possible to record user sessions and reproduce the result by replaying the actions.
+* The whole state of an app that uses redux is stored in an **object tree (a tree structure holding objects at the nodes)** inside a **single store**.
+* The only way to change the state tree is to emit an **action (a plain JS object that describes what happened in the app)**.
+* **Reducers** are used to describe how the actions modify the state tree.
