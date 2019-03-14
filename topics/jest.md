@@ -37,7 +37,6 @@ beforeEach(() => {
 
 Use **beforeAll** and **afterAll** for work that has to be performed once per file.
 
-
 ```javascript
 // the MovieDatabse will be reused between tests.
 
@@ -57,5 +56,40 @@ test('movie database has Terminator', () => {
 
 test('movie database has Lord of the Rings', () => {
   expect(isMovie('Lord of the Rings')).toBeTruthy();
+});
+```
+### Scoping
+
+* **before** and **after** blocks apply to every test in a file by default. 
+* tests can be grouped together by using a **describe** block.
+* **before** and **after** blocks within a **describe** block only apply to tests within that describe block.
+
+```javascript
+// applies to all tests in this file.
+beforeEach(() => {
+  return initializeMovieDatabase();
+});
+
+test('movie database has Terminator', () => {
+  expect(isMovie('Terminator')).toBeTruthy();
+});
+
+test('movie database has Lord of the Rings', () => {
+  expect(isMovie('Lord of the Rings')).toBeTruthy();
+});
+
+describe('mathcing actors to movies', () => {
+  // only applies to tests within this describe block.
+  beforeEach(() => {
+    return initializeActorDatabase();
+  });
+  
+  test('Arnold stars in Terminator', () => {
+    expect(isActorInMovie('Arnold', 'Terminator')).toBeTruthy();
+  });
+  
+  test('Elijah Wood stars in Lord of the Rings', () => {
+    expect(isActorInMovie('Elijah Wood', 'Lord of the Rings')).toBeTruthy();
+  });
 });
 ```
