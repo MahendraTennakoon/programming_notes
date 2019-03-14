@@ -94,3 +94,8 @@ describe('mathcing actors to movies', () => {
 });
 ```
 **Note:** *the top-level beforeEach executes before the beforeEach within the describe block.*
+
+### Order of execution of describe and test blocks
+
+* **describe** handlers in a file are executed before any of the actual tests.
+* After the **descrie blocks** complete, by default jest executes all the tests serially in the order they were encountered, waiting for each test to finish and be tidied up before moving on.
