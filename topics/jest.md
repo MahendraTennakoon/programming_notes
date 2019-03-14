@@ -25,3 +25,11 @@ test('movie database has Lord of the Rings', () => {
   expect(isMovie('Lord of the Rings')).toBeTruthy();
 });
 ```
+**beforeEach** and **afterEach** can either take a done parameter or return a promise.
+
+```javascript
+beforeEach(() => {
+  // initializeMovieDatabase returns a promise that will be resolved when the database is initialized.
+  return initializeMovieDatabase();
+});
+```
