@@ -99,3 +99,15 @@ describe('mathcing actors to movies', () => {
 
 * **describe** handlers in a file are executed before any of the actual tests.
 * After the **descrie blocks** complete, by default jest executes all the tests serially in the order they were encountered, waiting for each test to finish and be tidied up before moving on.
+
+### Tip: test.only
+use test.only to make it the only test that runs (this is helpful for debugging / identifying what causes a test to fail).
+
+```javascript
+test.only('this will be the only test that runs', () => {
+  // ...
+});
+test('this test will not run', () => {
+  // ...
+});
+```
