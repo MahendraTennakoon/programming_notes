@@ -10,7 +10,8 @@
 ### NAT Gateway
 * used to route traffic from a private network to internet.
 * One way. Does not allow outside access.
+
 ### Network ACLs
 * spans across zones.
 * similar to a firewall.
-* 
+
