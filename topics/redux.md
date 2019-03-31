@@ -17,3 +17,8 @@
 * JavaScript apps need to manage more state than ever before.
 * It has become increasing difficult to trace when state is modified, how it is modified and who modified it.
 * When a system is opaque and non-deterministic (can work differently on different runs even for the same inputs), it's hard to maintain and reproduce bugs.
+* The modern frontend requirements are becoming increasingly complex
+  * optimistic updates
+  * server-side rendering
+  * fetching data before route transitions
+* This complexity is hard to handle since **mutation** and **asynchronity** are very difficult concepts to reason about together.
