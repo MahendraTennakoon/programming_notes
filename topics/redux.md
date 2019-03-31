@@ -30,3 +30,6 @@
 * The entire state of an app is a plain JavaScript object.
 * This object is similar to a model except there are no setters (this is so that different parts of the code can't change the state randomly).
 * To change something in the state, an **action** has to be dispatched (an action is a plain JavaScript object that describes what happened).
+* Enforcing that every state change has to be an action, makes it easier understand what is going on in the app. If state changes, we can always trace which actions caused the change.
+* To connect the state and the actions, **reducers** are used.
+* A reducer is simply a function that takes in an action and state as parameters and returns the next state of the app.
