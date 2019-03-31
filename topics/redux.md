@@ -33,3 +33,11 @@
 * Enforcing that every state change has to be an action, makes it easier understand what is going on in the app. If state changes, we can always trace which actions caused the change.
 * To connect the state and the actions, **reducers** are used.
 * A reducer is simply a function that takes in an action and state as parameters and returns the next state of the app.
+
+## Three Principles of Redux
+
+* Single source of truth
+  * The state of the entire app is stored in an object tree within a single store (an object that holds the application state). 
+  * The state from the server can be serialized and hydrated (populated) into the client with minimum effort.
+* State is read-only
+* Changes are made with pure functions
