@@ -21,4 +21,6 @@
   * optimistic updates (UI behaves as if a change was successfully completed before receiving confirmation from the server)
   * server-side rendering
   * fetching data before route transitions
-* This complexity is hard to handle since **mutation** and **asynchronity** are very difficult concepts to reason about together.
+* This complexity is hard to handle since **mutation** and **asynchronicity** are very difficult concepts to reason about together.
+  * React tries to solve this in the view layer by removing asynchrony and direct DOM manipulation.
+  * Redux tries to make state changes predictable (same actions in the same order will always result in the same state) by  imposing certian restrictions on state changes. These restrictions are contained in the three principles of redux. 
