@@ -39,5 +39,16 @@
 * Single source of truth
   * The state of the entire app is stored in an object tree within a single store (an object that holds the application state). 
   * The state from the server can be serialized and hydrated (populated) into the client with minimum effort.
+  * Makes it easier to debug or inspect an application.
+  * It is trivial to implement things like undo/redo state which have traditionally been difficult to implement.
 * State is read-only
+  * The only way to change state is to emit an action.
+  * This ensures that views or network callbacks will never directly modify the state.
+  * Instead, they express an intent to modify the state.
+  * All changes are centralized and happen one by one in a strict order
+    * therefore, there are no suble race conditions to watch out for
+  * since actions are plain JavaScript objects, they can be:
+    * logged
+    * serialized
+    * replayed later for debugging
 * Changes are made with pure functions
