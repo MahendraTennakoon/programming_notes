@@ -16,3 +16,4 @@
 
 * JavaScript apps need to manage more state than ever before.
 * It has become increasing difficult to trace when state is modified, how it is modified and who modified it.
+* When a system is opaque and non-deterministic (can work differently on different runs even for the same inputs), it's hard to maintain and reproduce bugs.
