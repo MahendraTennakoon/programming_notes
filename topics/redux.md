@@ -24,3 +24,9 @@
 * This complexity is hard to handle since **mutation** and **asynchronicity** are very difficult concepts to reason about together.
   * React tries to solve this in the view layer by removing asynchrony and direct DOM manipulation.
   * Redux tries to make state changes predictable (same actions in the same order will always result in the same state) by  imposing certian restrictions on state changes. These restrictions are contained in the three principles of redux. 
+
+## Core Concepts
+
+* The entire state of an app is a plain JavaScript object.
+* This object is similar to a model except there are no setters (this is so that different parts of the code can't change the state randomly).
+* To change something in the state, an **action** has to be dispatched (an action is a plain JavaScript object that describes what happened).
