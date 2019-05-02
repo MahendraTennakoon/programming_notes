@@ -58,3 +58,7 @@
     * They should also be free of side effects (no mutations of local static variables or non local variables).
     * This is what enables features like hot reloading and time travel debugging.
   * Reducers **should always return new state objects instead of mutating the previous state**.
+  * Since reducers are just pure functions it is possible to:
+    * Control the order in which they are called.
+    * Pass additional data.
+    * Make reusable reducers for common tasks such as pagination.
