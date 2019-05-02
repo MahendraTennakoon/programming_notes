@@ -52,3 +52,9 @@
     * serialized
     * replayed later for debugging
 * Changes are made with pure functions
+  * Pure reducers are written to specify how the state tree is modified.
+  * Reducers are just pure functions that take in the previous state and an action and returns the new state.
+    * A pure function is a function that returns the same value for the same inputs.
+    * They should also be free of side effects (no mutations of local static variables or non local variables).
+    * This is what enables features like hot reloading and time travel debugging.
+  * Reducers should always return new state objects instead of mutating the previous state.
