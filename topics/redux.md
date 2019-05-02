@@ -57,4 +57,4 @@
     * A pure function is a function that returns the same value for the same inputs.
     * They should also be free of side effects (no mutations of local static variables or non local variables).
     * This is what enables features like hot reloading and time travel debugging.
-  * Reducers should always return new state objects instead of mutating the previous state.
+  * Reducers **should always return new state objects instead of mutating the previous state**.
