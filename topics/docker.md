@@ -9,3 +9,20 @@
   - **Portable**: Containers can be build locally, can be pushed to the cloud and can run anywhere.
   - **Scalable**: Container replicas can be increased and be automatically distributed.
   - **Stackable**: Services can be stacked vertically on-the-fly.
+
+## Images and containers
+
+- An image is an executable package that includes everything needed to run an application
+  - code
+  - a runtime
+  - libraries
+  - environment variables
+  - configuration files
+- A container is launched by running an image.
+  - A container is a runtime instance of an image.
+  - A container is what the image becomes in memory when executed (an image with state, or a user process).
+- Execute the following command to see a list of running containers.
+  ```
+  docker ps
+  ```
+ 
