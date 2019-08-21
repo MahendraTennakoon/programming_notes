@@ -26,3 +26,11 @@
   docker ps
   ```
  
+ ### Containers and Virtual Machines
+ 
+ - Containers
+   - run natively on Linux and share the host machine's kernel(central part of the OS) with other containers.
+   - runs as a lightweight process.
+ - VMs
+   - run a complete guest OS with virtual access to host resources throgh a hypervisor.
+   - VMs usually provide an environment with more resources than an application needs.
