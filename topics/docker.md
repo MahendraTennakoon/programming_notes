@@ -58,3 +58,9 @@ docker container ls
 docker container ls --all
 docker container ls -aq
 ``
+### Conclusion
+
+- Containers heavily benefit CI/CD
+  - applications have no system dependencies
+  - updates can be pushed to parts of a distributed application
+  - resource count can be optimized
