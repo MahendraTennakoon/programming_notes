@@ -57,7 +57,8 @@ docker image ls
 docker container ls
 docker container ls --all
 docker container ls -aq
-``
+```
+
 ### Conclusion
 
 - Containers heavily benefit CI/CD
