@@ -16,13 +16,13 @@
 
 
 # Introduction
-Introduced in ES2015(ES6), template literals are quite useful when working with strings in JavaScript. Instead of single or double quotes, template literals are enclosed by the backtick(\`) character.
+Introduced in ES2015 (ES6), template literals are quite useful when working with strings in JavaScript. Instead of single or double quotes, template literals are enclosed by the backtick (\`) character.
 
 ```javascript
 console.log(`The quick brown fox jumps over the lazy dog`)
 ``` 
 
-> Fun fact: "The quick brown fox jumps over the lazy dog" is an English [pangram](https://en.wikipedia.org/wiki/Pangram)(a sentence containing all the letters of the alphabet).
+> Fun fact: "The quick brown fox jumps over the lazy dog" is an English [pangram](https://en.wikipedia.org/wiki/Pangram) (a sentence containing all the letters of the alphabet).
 
 
 
