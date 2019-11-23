@@ -20,10 +20,16 @@ Introduced in ES2015 (ES6), template literals are quite useful when working with
 
 ```javascript
 console.log(`The quick brown fox jumps over the lazy dog`)
-``` 
+```
 
 > Fun fact: "The quick brown fox jumps over the lazy dog" is an English [pangram](https://en.wikipedia.org/wiki/Pangram) (a sentence containing all the letters of the alphabet).
 
+The most common use case of template literals is string interpolation or in simpler terms substitution of placeholders with their corresponding values. The placeholders are indicated by the dollar sign and curly braces.
+
+```javascript
+const guyFawkesDay = "Fifth of November"
+console.log(`Remember, remember, the ${guyFawkesDay}`)
+``` 
 
 
 - if the expression is not a string, it will be converted to a string
