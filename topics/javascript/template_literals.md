@@ -31,6 +31,26 @@ const guyFawkesDay = "Fifth of November"
 console.log(`Remember, remember, the ${guyFawkesDay}`)
 ``` 
 
+The value substituted in the placeholder can be any JavaScript expression and if it is not a string, it will br converted to a string.
+
+Template literals support multiline strings. Notice how all whitespaces (including newlines) are preserved in the output.
+
+```javascript
+const riddleOfStrider = `
+  All that is gold does not glitter,
+  Not all those who wander are lost;
+  The old that is strong does not wither,
+  Deep roots are not reached by the frost.
+  
+  From the ashes, a fire shall be woken,
+  A light from the shadows shall spring;
+  Renewed shall be blade that was broken,
+  The crownless again shall be king.
+`
+console.log(riddleOfStrider)
+``` 
+
+
 
 - if the expression is not a string, it will be converted to a string
 - can be escaped with \
