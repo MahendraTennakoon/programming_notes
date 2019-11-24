@@ -31,7 +31,7 @@ const guyFawkesDay = "Fifth of November"
 console.log(`Remember, remember, the ${guyFawkesDay}`)
 ``` 
 
-The value substituted in the placeholder can be any JavaScript expression and if it is not a string, it will br converted to a string.
+The value substituted in the placeholder can be any JavaScript expression and if it is not a string, it will be converted to a string.
 
 Template literals support multiline strings. Notice how all whitespaces (including newlines) are preserved in the output.
 
