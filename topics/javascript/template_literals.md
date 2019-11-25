@@ -54,9 +54,3 @@ To escape a backtick in a template literal, the backslash (\\) character can be 
 ```javascript
 console.log(`Template literals are enclosed by the backtick (\`) character.`)
 ``` 
-
-
-
-- if the expression is not a string, it will be converted to a string
-- can be escaped with \
-- all whitespaces in the template including newlines are included in the output
