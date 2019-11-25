@@ -49,6 +49,11 @@ const riddleOfStrider = `
 `
 console.log(riddleOfStrider)
 ``` 
+To escape a backtick in a template literal, the backslash (\\) character can be used.
+
+```javascript
+console.log(`Template literals are enclosed by the backtick (\`) character.`)
+``` 
 
 
 
