@@ -57,3 +57,9 @@ console.log(`Template literals are enclosed by the backtick (\`) character.`)
 
 ### Tagged templates
 Tagged templates support more advanced manipulations on strings. A tag (denoted as a tag before the opening backtick) is simply a function that parses the template literal. The first argument to a tag function is an array of all strings of the template.
+
+```javascript
+const guyFawkesDay = "Fifth of November"; 
+
+const template = styled`Remember, remember, the ${guyFawkesDay}`;
+``` 
