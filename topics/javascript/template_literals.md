@@ -19,7 +19,7 @@
 Introduced in ES2015 (ES6), template literals are quite useful when working with strings in JavaScript. Instead of single or double quotes, template literals are enclosed by the backtick (\`) character.
 
 ```javascript
-console.log(`The quick brown fox jumps over the lazy dog`)
+console.log(`The quick brown fox jumps over the lazy dog`);
 ```
 
 > Fun fact: "The quick brown fox jumps over the lazy dog" is an English [pangram](https://en.wikipedia.org/wiki/Pangram) (a sentence containing all the letters of the alphabet).
@@ -27,8 +27,8 @@ console.log(`The quick brown fox jumps over the lazy dog`)
 The most common use case of template literals is string interpolation or in simpler terms substitution of placeholders with their corresponding values. The placeholders are indicated by the dollar sign and curly braces.
 
 ```javascript
-const guyFawkesDay = "Fifth of November"
-console.log(`Remember, remember, the ${guyFawkesDay}`)
+const guyFawkesDay = "Fifth of November";
+console.log(`Remember, remember, the ${guyFawkesDay}`);
 ``` 
 
 The value substituted in the placeholder can be any JavaScript expression and if it is not a string, it will be converted to a string.
@@ -46,20 +46,20 @@ const riddleOfStrider = `
   A light from the shadows shall spring;
   Renewed shall be blade that was broken,
   The crownless again shall be king.
-`
-console.log(riddleOfStrider)
+`;
+console.log(riddleOfStrider);
 ``` 
 To escape a backtick in a template literal, the backslash (\\) character can be used.
 
 ```javascript
-console.log(`Template literals are enclosed by the backtick (\`) character.`)
+console.log(`Template literals are enclosed by the backtick (\`) character.`);
 ``` 
 
 ### Tagged templates
 Tagged templates support more advanced manipulations on strings. A tag (denoted as a tag before the opening backtick) is simply a function that parses the template literal. The first argument to a tag function is an array of all strings of the template.
 
 ```javascript
-const guyFawkesDay = "Fifth of November"; 
-
-const template = styled`Remember, remember, the ${guyFawkesDay}`;
+const movie = 'The Lord of the Rings: The Return of the King';
+const awardsCount = 11;
+const template = styled`${movie} won all Oscar awards for which it was nominated. It won ${awardsCount} awards in total`;
 ``` 
