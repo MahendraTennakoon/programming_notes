@@ -61,5 +61,7 @@ Tagged templates support more advanced manipulations on strings. A tag (denoted 
 ```javascript
 const movie = 'The Lord of the Rings: The Return of the King';
 const awardsCount = 11;
+const styled = (strings) => {}
 const template = styled`${movie} won all Oscar awards for which it was nominated. It won ${awardsCount} awards in total`;
 ``` 
+The first argument
