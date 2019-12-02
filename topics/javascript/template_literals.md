@@ -64,4 +64,8 @@ const awardsCount = 11;
 const styled = (strings) => {}
 const template = styled`${movie} won all Oscar awards for which it was nominated. It won ${awardsCount} awards in total`;
 ``` 
-The first argument
+As mentioned previously, the first argument to the tag function is an array of strings in the template delimited by placeholders. If we are to log ```strings``` in the above code snippet, it would be 
+
+```
+["", " won all Oscar awards for which it was nominated. It won ", " awards in total"]
+```
