@@ -61,7 +61,7 @@ Tagged templates support more advanced manipulations on strings. A tag (denoted 
 ```javascript
 const movie = 'The Lord of the Rings: The Return of the King';
 const awardsCount = 11;
-const styled = (strings) => {}
+const styled = (strings, movieName, awards) => {}
 const template = styled`${movie} won all Oscar awards for which it was nominated. It won ${awardsCount} awards in total`;
 ``` 
 As mentioned previously, the first argument to the tag function is an array of strings in the template delimited by placeholders. If we are to log ```strings``` in the above code snippet, it would be the array below.
@@ -69,3 +69,4 @@ As mentioned previously, the first argument to the tag function is an array of s
 ```
 ["", " won all Oscar awards for which it was nominated. It won ", " awards in total"]
 ```
+Value of each placeholder is passed in as an argument to the tag function. The tag function can return any value b
