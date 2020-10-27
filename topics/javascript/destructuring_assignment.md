@@ -8,6 +8,11 @@ The term Destructuring Assignment itself is very descriptive of what it does. It
 
 ## Array Destructuring
 
+```
+const colors = ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"];
+
+const [C, M, Y, K, ...rest] = colors;
+```
 
 
 
