@@ -8,13 +8,34 @@ The term Destructuring Assignment itself is very descriptive of what it does. It
 
 ## Array Destructuring
 
+Let's consider the following array.
+
 ```
 const colors = ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"];
+```
+Suppose we wanted to assign the first four colors to variables. We can do that by assiging each value in the array by its index.
 
-const [C, M, Y, K, ...rest] = colors;
+```
+const c = colors[0];
+const m = colors[1];
+const y = colors[2];
+const k = colors[3];
+
+console.log(c, m, y, k) // Cyan Magenta Yellow Black
 ```
 
+There's nothing wrong with this approach, but its far more concise with destructuring.
 
+```
+const [c, m, y, k] = colors;
+console.log(c, m, y, k) // Cyan Magenta Yellow Black
+```
+As you can notice, the order of the variables does matter here since it is in that order the values are assigned. However, it is possible to skip values with commas.
+
+```
+const [c,, y, k] = colors;
+console.log(c, y, k) // Cyan Yellow Black
+```
 
 ## Object Destructuring
 
