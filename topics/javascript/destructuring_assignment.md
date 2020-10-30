@@ -69,10 +69,12 @@ console.log(c, m, y, k) // Cyan Magenta Yellow Black
 
 So far, in every example we considered, we unpacked only a portion of the array and left out the rest. What if we wanted to assign the rest of the values in the array to another variable?
 
+This can be done with the rest pattrn.
+
 ```
 const colors = ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"];
 
-const [c, m, y, k] = colors;
+const [c, m, y, k, ...rest] = colors;
 ```
 
 ## Object Destructuring
