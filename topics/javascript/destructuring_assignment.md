@@ -88,10 +88,72 @@ const [c, m, y, k, ...rgb] = colors;
 console.log(c, m, y, k, rgb)
 ```
 
+Let's move onto Object Destructuring now.
 
 ## Object Destructuring
 
 ### The rest pattern "..."
+
+Objects can be destructured using the object keys, and in most cases this is much more useful than array destructuring. I will create an object with a few properties of the dragon space-craft. I'll name it dragon. It is resuable and since this is a cargo space-craft, crew is zero and I'll add the capacity as well just for fun.
+
+```
+const dragon = {
+    isReusable: true,
+    crew: 0,
+    capacity: "3500 kg"
+}
+
+// we can simply destructure it ilke this. Since this is an array, we'll use curly braces.
+const { isReusable, crew, capacity } = dragon;
+
+console.log(isReusable, crew, capacity)
+```
+Just like with arrays, we can declare the the variables first and have the assignment separately.
+
+```
+const dragon = {
+    isReusable: true,
+    crew: 0,
+    capacity: "3500 kg"
+}
+let isReusable, crew, capacity;
+
+{ isReusable, crew, capacity } = dragon;
+
+```
+However, if we try to do this, it throws an error since what we have on the left hand side is considered a code block and not an object. As you probably know, a code block like this is usually used to group a set of statements. We can wrap the whole thing in paranthesis to let JS know that this is not a code block.
+
+```
+const dragon = {
+    isReusable: true,
+    crew: 0,
+    capacity: "3500 kg"
+}
+let isReusable, crew, capacity;
+
+({ isReusable, crew, capacity } = dragon);
+
+```
+
+As you can see, it works fine now.
+
+We can also assign the properties in the object to variables that have different names than the keys of the object. This can be done with a colon.
+
+```
+const dragon = {
+    isReusable: true,
+    crew: 0,
+    capacity: "3500 kg"
+}
+
+const { isReusable, crew, capacity: payload } = dragon;
+
+console.log(isReusable, crew, payload)
+```
+
+What it basically does is, it takes the property crew from this object and assigns it to variable payload.
+
+///////////////////////////////////////////////////////////
 
 When there are more properties in the object than there are variables, we can assign the "rest" of them to a variable with the rest pattern.
 
