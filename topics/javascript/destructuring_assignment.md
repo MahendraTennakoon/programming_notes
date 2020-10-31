@@ -6,6 +6,8 @@ Destructuring assignment is one of the most useful features introduced with ES6,
 
 The term Destructuring Assignment itself is very descriptive of what it does. It simply extracts the values from array or object data structures and assigns them to some other variables.
 
+Let's start with Array Destructuring.
+
 ## Array Destructuring
 
 Let's consider the following array.
@@ -24,14 +26,14 @@ const k = colors[3];
 console.log(c, m, y, k) // Cyan Magenta Yellow Black
 ```
 
-There's nothing wrong with this approach, but its far more concise with destructuring.
+There's nothing wrong with this approach, but it's far more concise with destructuring.
 
 ```
 const [c, m, y, k] = colors;
 console.log(c, m, y, k) // Cyan Magenta Yellow Black
 ```
 
-As you can notice, the order of the variables does matter here since it is in that order the values are assigned. However, it is possible to skip values with commas. To make this more interesting, let's mix up the colors in the array. Red, Geen and Blue are the colors in the RGB color model which are primarily used for digital work while CMYK is used for print. So, let's mix them up.
+As you can notice, the order of the variables does matter here since it is in that order the values are assigned. However, it is possible to skip values with commas. To make this more interesting, let's mix up the colors in the array. Red, Geen and Blue are the colors in the RGB color model which are primarily used for digital work while CMYK is used for print. Let's mix them up.
 
 ```
 const colors = ["Cyan", "Red", "Magenta", "Yellow", "Black", "Green", "Blue"];
@@ -49,7 +51,7 @@ console.log(c, m, y, k) // Cyan Magenta Yellow Black
 
 That works as expected.
 
-It is important to note that variables can assigned separately from their declarations.
+It is important to note that variables can be assigned separately from their declarations.
 
 ```
 let c, m, y, k;
@@ -58,7 +60,7 @@ let c, m, y, k;
 console.log(c, m, y, k) // Cyan Magenta Yellow Black
 ```
 
-It is possible to assign a default value to a variable when destructuing. The default will value will be used if the corresponding value in the array is undefined.
+It is possible to assign a default value to a variable when destructuing. The default value will be used if the corresponding value in the array is undefined.
 
 ```
 const colors = ["Cyan", "Magenta", "Yellow"];
@@ -73,9 +75,19 @@ This can be done with the rest pattrn.
 
 ```
 const colors = ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"];
-
 const [c, m, y, k, ...rest] = colors;
+
+console.log(c, m, y, k, rest)
 ```
+Let's have a second look at this "...rest" syntax. The variable rest is very commonly used in situations like this, but it can be named whatever we want. So, if I rename it to rgb, it works without any issues.
+
+```
+const colors = ["Cyan", "Magenta", "Yellow", "Black", "Red", "Green", "Blue"];
+const [c, m, y, k, ...rgb] = colors;
+
+console.log(c, m, y, k, rgb)
+```
+
 
 ## Object Destructuring
 
