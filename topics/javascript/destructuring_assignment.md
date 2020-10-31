@@ -211,13 +211,23 @@ function describe(crew, capacity) {
 describe(dragon.crew, dragon.capacity);
 ```
 
-What we usually do is, have separate parameters like this. This can work in most cases, but it is really a pain to work with when there is a large number of parameters. We can pass in an object as the parameter and use the object properties with the dot notation. Even better, we can destructure the object and that is passed in as a parameter.
+What we usually do is, have separate parameters like this. This can work in most cases, but it is really a pain to work with when there is a large number of parameters. We can pass in an object as the parameter and use the object properties with the dot notation. Even better, we can destructure the object that is passed in as a parameter.
 
 So, I will pass in the entire dragon object and unpack only the values I need.
 
 ```
-function describe({name: 'Dragon', crew, capacity}) {
-    console.log(`${name} is a ${crew} crew space-craft with a capacity of ${capacity}`);
+function describe({crew, capacity}) {
+    console.log(`${crew} crew space-craft with a capacity of ${capacity}` )
+}
+
+describe(dragon);
+```
+
+We can also perform all the things that we did with object destructuring before. So, I'll add a new property "name" and assign a default value and it will work perfectly fine. We can also have different variables names as before. This is really useful in many real world situations. 
+
+```
+function describe({name = "Dragon", crew, capacity: payload}) {
+    console.log(`${name} is a ${crew} crew space-craft with a capacity of ${payload}` )
 }
 
 describe(dragon);
@@ -225,7 +235,6 @@ describe(dragon);
 
 We can easily destructure nested properties as well. 
 
-We can also perform all the things that we did with object destructuring before. So, I'll add a new property "name" and assign a default value and it will work perfectly fine. This is really useful in many real world applications. 
+```
 
-
-///////////////////////////////////////////////////////////
+```
