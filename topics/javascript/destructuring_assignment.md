@@ -252,3 +252,4 @@ function describe({name = "Dragon", crew, capacity: payload, dimensions: { lengt
 
 describe(dragon);
 ```
+And we can destructure the nested values by repeating the same syntax.
