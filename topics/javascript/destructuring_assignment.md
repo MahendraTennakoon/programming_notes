@@ -92,8 +92,6 @@ Let's move onto Object Destructuring now.
 
 ## Object Destructuring
 
-### The rest pattern "..."
-
 Objects can be destructured using the object keys, and in most cases this is much more useful than array destructuring. I will create an object with a few properties of the dragon space-craft. I'll name it dragon. It is resuable and since this is a cargo space-craft, crew is zero and I'll add the capacity as well just for fun.
 
 ```
@@ -154,6 +152,8 @@ console.log(isReusable, crew, payload)
 What it basically does is, it takes the property crew from this object and assigns it to variable payload.
 
 ///////////////////////////////////////////////////////////
+
+### The rest pattern "..."
 
 When there are more properties in the object than there are variables, we can assign the "rest" of them to a variable with the rest pattern.
 
