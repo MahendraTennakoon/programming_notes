@@ -101,7 +101,7 @@ const dragon = {
     capacity: "3500 kg"
 }
 
-// we can simply destructure it ilke this. Since this is an array, we'll use curly braces.
+// we can simply destructure it ilke this. Since this is an object, we'll use curly braces.
 const { isReusable, crew, capacity } = dragon;
 
 console.log(isReusable, crew, capacity)
@@ -149,26 +149,83 @@ const { isReusable, crew, capacity: payload } = dragon;
 console.log(isReusable, crew, payload)
 ```
 
-What it basically does is, it takes the property crew from this object and assigns it to variable payload.
+What it basically does is, it takes the property capacity from the dragon object and assigns it to variable payload.
 
-///////////////////////////////////////////////////////////
-
-### The rest pattern "..."
-
-When there are more properties in the object than there are variables, we can assign the "rest" of them to a variable with the rest pattern.
+Just like with array, we can assign default values to variables.
 
 ```
-let options = {
-  width: 100,
-  height: 200,
-  weight: 50
+const dragon = {
+    isReusable: true,
+    crew: 0,
+    capacity: "3500 kg"
 }
 
-const { width, ...rest } = options;
+const { isReusable, crew, capacity, length = "6.1m" } = dragon;
 
-alert(width);
-alert(JSON.stringify(rest));
+console.log(isReusable, crew, capacity, length);
 ```
 
-### Nested Destructuring
+Since length is not a property of the dragon object, the default value is assigned to it.
 
+We can also assign to new variable names and have default values at the same time. That will look something like this.
+
+```
+const dragon = {
+    isReusable: true,
+    crew: 0,
+    capacity: "3500 kg"
+}
+
+const { isReusable, crew, capacity: payload = "4000 kg", length = "6.1m" } = dragon;
+
+console.log(isReusable, crew, payload, length);
+```
+If we remove capacity from the dragon object, payload gets the default value.
+
+When there are more properties in the object than there are variables, we can assign the "rest" of them to a variable with the rest pattern just like we did with arrays.
+
+```
+const dragon = {
+    isReusable: true,
+    crew: 0,
+    capacity: "3500 kg"
+}
+
+const { crew, ...rest } = dragon;
+
+console.log(crew);
+console.log(rest);
+```
+As you can see, rest is an object with the properties of dragon except crew.
+
+
+My favorite use case of object destructuring is to use it with function parameters. Let's say we have a function named describe to print an object such as this one.
+
+I'll use template literals to format the output here. If you are not familiar with template literals, I have a whole video on it which I have linked in the description.
+
+```
+function describe(crew, capacity) {
+    console.log(`${crew} crew space-craft with a capacity of ${capacity}` )
+}
+
+describe(dragon.crew, dragon.capacity);
+```
+
+What we usually do is, have separate parameters like this. This can work in most cases, but it is really a pain to work with when there is a large number of parameters. We can pass in an object as the parameter and use the object properties with the dot notation. Even better, we can destructure the object and that is passed in as a parameter.
+
+So, I will pass in the entire dragon object and unpack only the values I need.
+
+```
+function describe({name: 'Dragon', crew, capacity}) {
+    console.log(`${name} is a ${crew} crew space-craft with a capacity of ${capacity}`);
+}
+
+describe(dragon);
+```
+
+We can easily destructure nested properties as well. 
+
+We can also perform all the things that we did with object destructuring before. So, I'll add a new property "name" and assign a default value and it will work perfectly fine. This is really useful in many real world applications. 
+
+
+///////////////////////////////////////////////////////////
