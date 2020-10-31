@@ -233,8 +233,22 @@ function describe({name = "Dragon", crew, capacity: payload}) {
 describe(dragon);
 ```
 
-We can easily destructure nested properties as well. 
+We can easily destructure nested properties as well. Let's add another property dimensions to our object. 
 
 ```
+const dragon = {
+    isReusable: true,
+    crew: 0,
+    capacity: "3500 kg",
+    dimensions: {
+        length: "6.1 m",
+        diameter: "3.7 m"
+    }    
+}
 
+function describe({name = "Dragon", crew, capacity: payload, dimensions: { length, diameter }}) {
+    console.log(`${name} is a ${crew} crew space-craft with a capacity of ${payload}, length: ${length} and diamter: ${diameter}`);
+}
+
+describe(dragon);
 ```
