@@ -1,11 +1,5 @@
 # Symbols
 
-JavaScript was first standardized in 1977. Since then there have been six types until the introduction of ES6.
+Symbol is a new JavaScript primitive data type that was introduced with ES6.
 
-- Undefined
-- Null
-- Boolean
-- Number
-- String
-- Object
 
