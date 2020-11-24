@@ -27,11 +27,30 @@ Symbol() is not a consturctor. If we try to use it as one, it will throw an erro
 new Symbol(); // TypeError: Symbol is not a constructor
 ```
 
-The `Symbol()` function always creates a unique value when you call it.
+## Description argument
+
+The `Symbol()` function accepts an optional description argument.
 
 ```
-const sym1 = Symbol();
-const sym2 = Symbol();
+const sym1 = Symbol("speed");
+const sym2 = Symbol("direction");
+
+console.log(sym1.toString()); // speed
+console.log(sym2.toString()); // direction
+```
+
+This description property can be accessed by calling `toString` on the symbol. Actually, we can remove it here since `console.log()` calls `toString()` implicitly.
+
+```
+console.log(sym1);
+console.log(sym2);
+```
+
+The description property can make debugging easier. However, it does not affect the uniqueness of the symbol in any way.
+
+```
+const sym1 = Symbol("speed");
+const sym2 = Symbol("speed");
+
 console.log(sym1 === sym2); // false
 ```
-
