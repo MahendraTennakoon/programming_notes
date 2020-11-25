@@ -54,3 +54,32 @@ const sym2 = Symbol("speed");
 
 console.log(sym1 === sym2); // false
 ```
+As you can see, the symbols are still unique eventhough the description is the same.
+
+
+## typeof
+
+We can use the typeof operator to check whether a variable is a sybol.
+
+```
+const sym1 = Symbol("speed");
+console.log(typeof sym1);
+```
+
+## Symbols as object keys
+
+An interesting thing about symbols is that they can be used as object keys.
+
+```
+const slot = Symbol('slot');
+const voltage = Symbol('voltage');
+
+const ram = {
+  speed: 3200,
+  capacity: '8 GB',
+  [slot]: 'DDR4',
+  [voltage]: '1.35V'
+}
+```
+
+This way, we can have unique object keys that will never conflict with the other string or symbol keys of the object.
