@@ -68,18 +68,55 @@ console.log(typeof sym1);
 
 ## Symbols as object keys
 
-An interesting thing about symbols is that they can be used as object keys.
+It is possible to use symbols as object keys and this is prbobably where you will use them the most.
+
+Let's assume we have the following object to represent a todo in a todo app.
 
 ```
-const slot = Symbol('slot');
-const voltage = Symbol('voltage');
-
-const ram = {
-  speed: 3200,
-  capacity: '8 GB',
-  [slot]: 'DDR4',
-  [voltage]: '1.35V'
+const todo = {
+    id: '001',
+    description: 'deploy services',
 }
+
+console.log(todo);
+```
+What if we do the following somewhere in our code.
+
+```
+...
+
+todo.id = '002';
+console.log(todo);
 ```
 
-This way, we can have unique object keys that will never conflict with the other string or symbol keys of the object.
+This overwrites `id` in the todo object. This is a simple example, but there are instances in real world applications where we need to ensure that certain object properties are uncollidable to avoid avoid scenarios like this.
+
+Let's try this again this with a Symbol.
+
+```
+const id = Symbol('id');
+
+const todo = {
+    id: '001',
+    description: 'deploy services',
+}
+
+todo.id = '002';
+console.log(todo); // { id: '002', description: 'deploy services' }
+```
+
+As you can see, that didn't change anything. This is because the key `id` on the todo object is still treated as a string key. We need to wrap it in sqaure brackets to indicate that it is a Symbol.
+
+```
+const id = Symbol('id');
+
+const todo = {
+    [id]: '001',
+    description: 'deploy services',
+}
+
+todo.id = '002';
+console.log(todo); // { id: '002', [Symbol(id)]: '001', description: 'deploy services' }
+```
+
+Now, although `todo.id` still adds a string key `id` to the object, it also has a Symbol `id` key that was not overwritten.
