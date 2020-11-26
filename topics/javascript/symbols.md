@@ -119,4 +119,10 @@ todo.id = '002';
 console.log(todo); // { id: '002', [Symbol(id)]: '001', description: 'deploy services' }
 ```
 
-Now, although `todo.id` still adds a string key `id` to the object, it also has a Symbol `id` key that was not overwritten.
+Now, although `todo.id` still adds a string key `id` to the object, it also has a Symbol `id` key that was not overwritten. We can use the same notation with square brackets to access the the Symbol key.
+
+```
+...
+console.log(todo.id); // 002
+console.log(todo[id]); // 001
+```
