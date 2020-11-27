@@ -13,6 +13,8 @@ Symbol is a new JavaScript primitive data type introduced with ES6. In this vide
 - Symbol
 ```
 
+It's worth noting that symbols aren't exclusive to JavaScript. Symbols are supported by languages like Lisp, Prolog, Ruby and Smalltalk as well.
+
 ## Creating Symbols
 
 We can create a symbol by calling the global function `Symbol()`. This is in contrast to the other primitive types that have a literal syntax. (TODO: find literal syntax, add examples)
@@ -126,3 +128,5 @@ Now, although `todo.id` still adds a string key `id` to the object, it also has 
 console.log(todo.id); // 002
 console.log(todo[id]); // 001
 ```
+
+
