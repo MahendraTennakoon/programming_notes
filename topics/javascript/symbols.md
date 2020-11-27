@@ -21,7 +21,7 @@ We can create a symbol by calling the global function `Symbol()`. This is in con
 console.log(Symbol()); // Symbol()
 ```
 
-Symbol() is not a consturctor. If we try to use it as one, it will throw an error/
+Symbol() is not a consturctor. If we try to use it as one, it will throw an error.
 
 ```
 new Symbol(); // TypeError: Symbol is not a constructor
@@ -59,7 +59,7 @@ As you can see, the symbols are still unique eventhough the description is the s
 
 ## typeof
 
-We can use the typeof operator to check whether a variable is a sybol.
+We can use the typeof operator to check whether a variable is a symbol.
 
 ```
 const sym1 = Symbol("speed");
