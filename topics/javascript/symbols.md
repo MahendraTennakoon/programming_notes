@@ -203,5 +203,5 @@ const todo = {
     date: '01/12/2020'
 }
 
-console.log(Object.getOwnPropertySymbols(todo));
+console.log(Object.getOwnPropertySymbols(todo)); // [ Symbol(id), Symbol(priority) ]
 ```
