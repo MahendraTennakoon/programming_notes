@@ -129,4 +129,79 @@ console.log(todo.id); // 002
 console.log(todo[id]); // 001
 ```
 
+## Symbols are ignored by most object inspection features
 
+It is worth noting that some JavaScript features that we commonly use with objects simply ignore symbols.
+
+### for...in statement
+
+Let's iterate over the properties of out todo object with a for...in statement.
+
+```
+const id = Symbol('id');
+
+const todo = {
+    [id]: '001',
+    description: 'deploy services',
+    date: '01/12/2020'
+}
+
+for (const prop in todo) {
+    console.log(`${prop}: ${todo[prop]}`);
+}
+
+// output
+description: deploy services
+date: 01/12/2020
+```
+As you can see, `for...in` ignored the `id` Symbol.
+
+### Object.keys()
+
+Similarly Symbols are ignore by `Object.keys()`.
+
+```
+const id = Symbol('id');
+
+const todo = {
+    [id]: '001',
+    description: 'deploy services',
+    date: '01/12/2020'
+}
+
+console.log(Object.keys(todo)); // ['description', 'date']
+```
+
+### Object.getOwnPropertyNames()
+
+`Object.getOwnPropertyNames()` also ignores Symbols.
+
+```
+const id = Symbol('id');
+
+const todo = {
+    [id]: '001',
+    description: 'deploy services',
+    date: '01/12/2020'
+}
+
+console.log(Object.getOwnPropertyNames(todo)); // ['description', 'date']
+```
+
+### Object.getOwnPropertySymbols()
+
+However, symbols aren't completely invisible. We can get a list of all Symbol properties of an object with `Object.getOwnPropertySymbols()`.
+
+```
+const id = Symbol('id');
+const priority = Symbol('priority');
+
+const todo = {
+    [id]: '001',
+    [priority]: 'high',
+    description: 'deploy services',
+    date: '01/12/2020'
+}
+
+console.log(Object.getOwnPropertySymbols(todo));
+```
