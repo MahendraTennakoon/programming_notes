@@ -205,3 +205,16 @@ const todo = {
 
 console.log(Object.getOwnPropertySymbols(todo)); // [ Symbol(id), Symbol(priority) ]
 ```
+
+## Global Symbol Registry
+
+Although the `Symbol()` function always returns a unique Symbol, it is possible to use something known as the Global Symbol Registry to create global Symbols shared across the codebase. This can be done by using `Symbol.for()`.
+
+```
+const sym1 = Symbol.for('speed');
+const sym2 = Symbol.for('speed');
+
+console.log(sym1 === sym2); // true
+```
+
+In this instance, `sym1` and `sym2` refer the exact same Symbol. What `Symbol.for` basically does is, it searches the Symbol registry across the current run-time and creates a new Symbol if it doesn't already exist. In our example, `const sym1 = Symbol.for('speed');` creates a new Symbol since it doesn't alreay exist and `const sym2 = Symbol.for('speed');` simply returns the Symbol that was already created with the same description.
