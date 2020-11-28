@@ -188,6 +188,24 @@ const todo = {
 console.log(Object.getOwnPropertyNames(todo)); // ['description', 'date']
 ```
 
+### JSON.stringify()
+
+`JSON.stringify()` also leaves out the Symbols.
+
+```
+const id = Symbol('id');
+const priority = Symbol('priority');
+
+const todo = {
+    [id]: '001',
+    [priority]: 'high',
+    description: 'deploy services',
+    date: '01/12/2020'
+}
+
+console.log(JSON.stringify(todo)); // {"description":"deploy services","date":"01/12/2020"}
+```
+
 ### Object.getOwnPropertySymbols()
 
 However, symbols aren't completely invisible. We can get a list of all Symbol properties of an object with `Object.getOwnPropertySymbols()`.
