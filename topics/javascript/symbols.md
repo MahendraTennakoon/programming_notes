@@ -242,5 +242,4 @@ In this instance, `sym1` and `sym2` refer to the exact same Symbol. What `Symbol
 
 ## Real World Use Cases
 
-Speaking of use cases, it is unlikely that you'll come across too many use cases for Symbols in your everyday code although Symbols are used by JavaScript itself internally and also by certain libraries. With that said, you can certainly use Symbols as unique keys in objects and also to add meta data to objects that won't
-be visible to JavaScript features that we commonly use with objects.
+Speaking of use cases, it is unlikely that you'll come across too many use cases for Symbols in your everyday code although Symbols are used by JavaScript itself internally and also by certain libraries. With that said, you can certainly use Symbols as unique keys in objects to prevent name collisions and also to add meta data to objects that won't be visible to JavaScript features that we commonly use with objects.
