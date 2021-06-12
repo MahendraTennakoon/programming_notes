@@ -43,6 +43,7 @@
 ### Balanced vs Unbalanced Binary Search Tree
 
 - Ideally, we need balanced BSTs since they are more efficient
+- Red/Black trees and AVL Trees are self balancing
 
 #### Unbalanced BST
 
@@ -59,3 +60,40 @@
 ### BST Cons
 
 - no O(1) operations
+
+## Heap
+
+### Binary Heap
+
+- lookup: O(n)
+- insert: O(log N)
+- delete: O(log N)
+- Max Heap: every child has a parent that is greater than it
+- Min Heap: every child has a parent that is lower than it (root node is the smallest)
+- The advantage of Binary Heaps is that it is really good at comparisons
+- Also, Binary Heaps take least amount of space possible
+- Used in data storage, priority queues, sorting algorithms
+- There is no concept of unbalanced Binary Heaps
+
+#### Priority Queue
+
+- Elements have a priority
+
+### Binary Heap Pros
+
+- Better than O(n) (except for lookup)
+- maintains priority
+- Flexible size
+- Fast inserts in most cases
+
+### Binary Heap Cons
+
+- Slow lookup
+
+## Trie (Prefix Tree)
+
+- Specialized tree used in searching (mostly commonly used with text)
+- Good for finding if a word or a part of a word exists in a text
+- Also good for IP Routing
+- Can be used to implement auto-completion
+- Big O of a Trie is O(length of word)
