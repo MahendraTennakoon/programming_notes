@@ -42,3 +42,11 @@ const graph = [[0, 2], [2, 3], [2, 1], [1, 3]]
 ### Adjacent Matrix
 
 const graph = [[0, 0, 1, 0], [0, 0, 1, 1], [1, 1, 0, 1], [0, 1, 1, 0]]
+
+## Pros of Graphs
+
+- Really useful when modelling relationships
+
+## Cons of Graphs
+
+- Scaling is hard
