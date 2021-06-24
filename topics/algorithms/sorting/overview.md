@@ -12,3 +12,5 @@ Unstable: Heap Sort, Quick Sort
 - Selection Sort: rarely used in real life
 - Merge Sort: good if you are worried about worst case, not very good in terms of space complexity (O(n))
 - Quick Sort: Good for most cases, unless worst case
+
+\*\* Counting sort and Radix sort can only be used with fixed length list of integers
