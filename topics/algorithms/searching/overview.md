@@ -20,3 +20,4 @@
 - Requires less memory
 - Very good at ansering the question: does the path exist?
 - Can get slow
+- Space complexity is equal to the height of the tree O(height)
