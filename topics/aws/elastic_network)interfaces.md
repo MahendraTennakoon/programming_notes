@@ -8,3 +8,4 @@
   - One or more security groups
   - A MAC address
 - ENI can be created independently and attached to EC2 instances on the fly for failover
+- Bound to a specific Availability Zone (AZ)
