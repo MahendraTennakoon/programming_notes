@@ -15,3 +15,26 @@
 * spans across zones.
 * similar to a firewall.
 
+## EC2 Hibernate
+
+- If an EC2 instance is stopped, data on disk (EBS) is kept intact for the next start
+- If an EC2 instance is terminated, data on EBS volumes (root) will be destroyed. (a secondary drive will not be destroyed)
+- On instance start, the following happens
+  - First start: the OS boots up and the EC2 user data script is run
+  - Following starts: the OS boots up
+  - Then your application starts, cache warms up (if available)
+  - All of this can take time
+- EC2 Hibernate
+  - The in-memory state (RAM) is preserved
+  - The instance boot is much faster (the OS is not stopped/restarted)
+  - Under the hood, the state in RAM is written to a file in root EBS volume
+  - The root EBS volume must be encrypted
+  - Instance RAM must be less than 150 GB
+  - Not supported for bare metal instances
+  - Root volume: must be EBS, encrypted, large
+  - Avilable for in demand and reserved instances (not available for spot instances)
+  - An instance cannot be hibernated for more than 60 days
+- Use cases:  
+  - Long running processes can be paused
+  - RAM state can be saved
+  - good for services that take a long time to initialize
