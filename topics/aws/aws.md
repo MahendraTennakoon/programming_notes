@@ -43,3 +43,16 @@
 
 - Multiple threads can run on one CPU
 - Each thread is represented as a vCPU
+
+## EC2 Instance Storage
+
+### EBS
+
+- EBS (Elastic Block Store) is a network drive you can attach to your instances while they run
+- It enables the instance to persist data even after instance termination
+- They are bound to a specific Availability Zone (to move a volume across, you first need to snapshot it)
+- It is a network drive (not a physical drive). So there can be a delay since it has to communicate with the instance over a network
+- An EBS drive can be detached from one instance and attached to another very quickly
+- Has a provisioned capacity (size in GBs, IOPS)
+  - You get billed for the provisioned capacity
+  - Capacity of the drive can be increased over time
