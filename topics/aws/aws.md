@@ -38,3 +38,8 @@
   - Long running processes can be paused
   - RAM state can be saved
   - good for services that take a long time to initialize
+
+## vCPU
+
+- Multiple threads can run on one CPU
+- Each thread is represented as a vCPU
