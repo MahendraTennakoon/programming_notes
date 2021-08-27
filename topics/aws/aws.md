@@ -56,3 +56,29 @@
 - Has a provisioned capacity (size in GBs, IOPS)
   - You get billed for the provisioned capacity
   - Capacity of the drive can be increased over time
+
+### EBS Snapshots
+
+- Make a backup of your EBS volume at a point in time
+- Not necessary to detach the volume to get snapshot of it, but it is recommended
+- Can copy snapshots across AZs or regions (good way to transfer some data between regions)
+
+## AMI
+
+- Amazon Machine Image
+- An AMI is a customization of an EC2 instance
+  - You can add your own software, configuration, OS, monitoring etc...
+  - Faster boot/configuration time since all your software is pre-packaged
+- AMIs are built for a specific region, but can be copied across regions
+- We can launch EC2 instances from 
+  - public AMIs (provided by AWS)
+  - your own AMI (you create and maintain them)
+  - AMI from AWS marketplace: An AMI someone else made (and potentially sells)
+ 
+ ### Process for creating an AMI from an EC2 instance
+ 
+ - Start an EC2 instance and customize it
+ - Stop the instance (for data integrity)
+ - Build an AMI (this will also create EBS snapshots)
+ - Launch instances from the custom AMI
+
