@@ -140,4 +140,64 @@
     - scenarios where lowest cost is of high importance
     - Provides a max throuput of 150 MiB/s and max IOPS of 250
 
-## EBS Multi-Attach (io1/io2 family)
+## EBS Multi-Attach (io1/io2 family only)
+
+- Attach the same EBS to multiple EC2 instances in the same AZ
+- Each EC2 instance has full read and write permissions to the volume
+- Use case:
+  - Achieve higher application availability in clustered Linux applications (eg: Teradata)
+  - Applications must manage concurrent write operations
+- Must use a file system that's cluster aware (not XFS, EX4 etc...)   
+
+## EBS Encryption
+
+- When we create an encrypted EBS volume, we get the following
+  - Data at rest is encrypted inside the volume
+  - All the data in flight moving between the instance and the volume is encrypted
+  - All snapshots are encrypted
+  - All volumes created from the snapshot are encrypted
+ - Encryption and encrytion are handled transparently (we don't have anything to do)
+ - Encyption has only a minor impact on latency
+ - EBS encryption leverages keys from KMS (AES-256)
+ - Copying an enencrypted snapshot enables encryption
+ - Snapshots of encrypted volumes are also encrypted
+
+### To encrypt an unencrypted EBS volume
+
+- Create an EBS snapshot of the volume
+- Encrypt the EBS snapshot (using copy)
+- Create new EBS volume from the snapshot (the volume will also be encrypted)
+- Attach the encrypted volume to the original instance
+
+## EBS RAID Options
+
+- EBS is already redundant storage (replicated within an AZ)
+- But what if we want to increase the IOPS to a very large number, mirror the EBS volumes?
+- RAID is possible as long as ypur OS supports it
+- Some RAID options are:
+  - RAID 0
+  - RAID 1
+  - RAID 5 (not recommended for EBS)
+  - RAID 6 (not recommended for EBS)
+
+### RAID 0 (increased performance)
+
+- Combine 2 or more volumes and get the total disk space and I/O (eg: one logical volume = EBS volume 1 + EBS volume 2)
+- If one disk fails, all data is lost
+  - Use cases:
+    - An application that needs a lot of IOPS and doesn't need fault tolerance
+    - A database that has replication already built-in
+- With RAID 0, we can have a very big disk with a lot of IOPS
+- eg:
+  - 2 500 GiB amazon EBS io1 volumes with 4000 provisioned IOPS each will create a => 1000 GiB RAID 0 array with an available bandidth of 8000 IOPS and 1000 MB/s throughput
+
+### RAID 1 (increased fault tolerance)
+
+- Mirroring a volume to another (eg: one logical partitions writes simultaneously to => EBS volume 1 and EBS volume 2)
+- If one disk fails, the logical volume will still work
+- We have to send the data to two EBS volumes at the same time (uses 2x network throughput)
+- Use cases:
+  - Applications that need an increased fault tolerance
+  - Applications where you need to service disks
+- Eg:
+  - 2 500 GiB amazon EBS io1 volumes with 4000 provisioned IOPS each will create a => 500 GiB RAID 1 array with an available bandwidth of 4000 IOPS and 500 MB/s throughput
