@@ -201,3 +201,40 @@
   - Applications where you need to service disks
 - Eg:
   - 2 500 GiB amazon EBS io1 volumes with 4000 provisioned IOPS each will create a => 500 GiB RAID 1 array with an available bandwidth of 4000 IOPS and 500 MB/s throughput
+
+## EFS (Elastic File System)
+
+- Managed NFS (Network file system) that can be mounted on many EC2 instances across multiple Availability Zones
+- Highly available, scalable but very expensive (3x the cost of a gp2 instance)
+- Pay per use
+- Use cases:
+  - content management, web serving, data sharing, wordpress
+- Uses NFSv4.1 protocol
+- Uses security group to control access to EFS
+- Compatible only with Linux (POSIX) based AMIs (does not work with Windows)
+- Encyption at rest using KMS
+- File system scales automatically (pay per use), no capacity planning
+
+### EFS Performance and Storage classes
+
+- supports 1000s of concurrent NFS clients, 10 GB+ /s throughput
+- can grow to a petabyte scale network file system, automatically
+- Performance Mode (set at EFS creation time)
+  - General purpose (default)
+    - latency-sensitive use cases (web server, CMS etc...)
+  - Max I/O
+    - higher latency, better throughput, even more parallel (great for big data and media processing) 
+  - Throughput Mode
+    - Bursting (default)
+      - 50 MiBs for 1TB of storage + burst uptp 100MiB/s
+    - Provisioned
+      - set your throughput regardless of storage size. eg: 1GiB/s for 1TB storage
+- Storage Tiers (this is a lifecycle management feature - move file after N days)
+  - standard for frequently accessed files
+  - infrequent access (EFS-IA): cost to retrieve files, lower price to store
+
+## EBS vs EFS
+
+- EBS volumes
+  - can be attached to only one instance at a time
+  - locked into a specific AZ
